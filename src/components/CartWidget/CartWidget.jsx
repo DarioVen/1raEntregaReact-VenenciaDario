@@ -1,21 +1,15 @@
 import { StarIcon } from "@chakra-ui/icons";
+import { Flex } from "@chakra-ui/react";
 
- 
-
-const CartWidget = () => {
-
+export const CartWidget = () => {
   return (
-
-    <div>
-
+    <Flex
+      alignItems={"center"}
+      marginRight={"30px"}
+      justifyContent={"space-between"}
+      width={"30px"}
+    >
       <StarIcon />0
-
-    </div>
-
+    </Flex>
   );
-
 };
-
- 
-
-export default CartWidget;
