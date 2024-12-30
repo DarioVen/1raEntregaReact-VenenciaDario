@@ -17,14 +17,14 @@ import {
 } from "@chakra-ui/react";
 import { MoonIcon, SunIcon, ChevronDownIcon } from "@chakra-ui/icons";
 
-import { useGetAllCategories } from "../../hooks/useGetAllCategories";
+import { useGetAllProducts } from "../../hooks/useGetAllProducts";
 
 import { CartWidget } from "../index";
 
 export const NavBar = () => {
   const { colorMode, toggleColorMode } = useColorMode();
 
-  const { categories } = useGetAllCategories();
+  const { items } = useGetAllProducts("categories");
 
   return (
     <>
@@ -39,7 +39,7 @@ export const NavBar = () => {
               Categorias
             </MenuButton>
             <MenuList height={"300px"} overflowY={"scroll"}>
-              {categories.map((category) => {
+              {items.map((category) => {
                 return (
                   <MenuItem key={category.slug}>
                     <Link to={`/category/${category.slug}`}>
@@ -67,7 +67,7 @@ export const NavBar = () => {
                 >
                   <Avatar
                     size={"sm"}
-                    src={"https://api.dicebear.com/9.x/thumbs/svg"}
+                    src={"https://api.dicebear.com/9.x/pixel-art/svg"}
                   />
                 </MenuButton>
                 <MenuList alignItems={"center"}>
@@ -75,7 +75,7 @@ export const NavBar = () => {
                   <Center>
                     <Avatar
                       size={"2xl"}
-                      src={"https://api.dicebear.com/9.x/thumbs/svg"}
+                      src={"https://api.dicebear.com/9.x/pixel-art/svg"}
                     />
                   </Center>
                   <br />
